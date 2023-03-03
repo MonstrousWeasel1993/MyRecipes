@@ -1,0 +1,91 @@
+﻿@model RecipeOrganiser.Models.Recipe
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Recipe</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryID" class="control-label"></label>
+                <input asp-for="CategoryID" class="form-control" />
+                <span asp-validation-for="CategoryID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhotoID" class="control-label"></label>
+                <input asp-for="PhotoID" class="form-control" />
+                <span asp-validation-for="PhotoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServingSize" class="control-label"></label>
+                <input asp-for="ServingSize" class="form-control" />
+                <span asp-validation-for="ServingSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrepHours" class="control-label"></label>
+                <input asp-for="PrepHours" class="form-control" />
+                <span asp-validation-for="PrepHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrepMinutes" class="control-label"></label>
+                <input asp-for="PrepMinutes" class="form-control" />
+                <span asp-validation-for="PrepMinutes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CookHours" class="control-label"></label>
+                <input asp-for="CookHours" class="form-control" />
+                <span asp-validation-for="CookHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CookMinutes" class="control-label"></label>
+                <input asp-for="CookMinutes" class="form-control" />
+                <span asp-validation-for="CookMinutes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CookTemperature" class="control-label"></label>
+                <input asp-for="CookTemperature" class="form-control" />
+                <span asp-validation-for="CookTemperature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SourceName" class="control-label"></label>
+                <input asp-for="SourceName" class="form-control" />
+                <span asp-validation-for="SourceName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SourceURL" class="control-label"></label>
+                <input asp-for="SourceURL" class="form-control" />
+                <span asp-validation-for="SourceURL" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Active" /> @Html.DisplayNameFor(model => model.Active)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

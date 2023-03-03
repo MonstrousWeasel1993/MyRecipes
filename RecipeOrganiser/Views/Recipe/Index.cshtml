@@ -1,0 +1,107 @@
+﻿@model IEnumerable<RecipeOrganiser.Models.Recipe>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhotoID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServingSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrepHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrepMinutes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CookHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CookMinutes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CookTemperature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SourceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SourceURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhotoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServingSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrepHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrepMinutes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CookHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CookMinutes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CookTemperature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SourceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SourceURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
